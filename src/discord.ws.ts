@@ -78,7 +78,7 @@ export class WsMessage {
     return new Promise((resolve) => {
       this.once("ready", (user) => {
         //print user nickname
-        console.log(`🎊 ws ready!!! Hi: ${user.global_name}`);
+        console.log(`🎊 WebSocket ready!!! Hi: ${user.global_name}`);
         resolve(this);
       });
     });
@@ -176,7 +176,7 @@ export class WsMessage {
       }
     }
 
-    if (!nonce && attachments?.length > 0 && components?.length > 0) {
+    if (attachments?.length > 0 && components?.length > 0) {
       this.done(message);
       return;
     }
